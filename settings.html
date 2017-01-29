@@ -1,0 +1,20 @@
+
+<br>
+<br>
+<br>
+<br>
+<div ng-controller="myCtrl">
+
+	<a ui-sref="settings.summary"><button>Summary</button></a> <a
+		ui-sref="settings.profile"><button ng-click="getProfileData()">Profile</button>
+	</a> <a ui-sref="settings.statements"><button>Statements</button></a> <a
+		ui-sref="settings.downloads"><button>Downloads</button></a>
+
+</div>
+<!-- 
+<a ui-sref="settings.tradeHistory"><button>Trade History</button></a>
+<a ui-sref="settings.portfolio"><button>Portfolio Holdings</button></a>
+<a ui-sref="settings.capgain"><button>Capital Gain</button></a> -->
+
+
+<div ui-view></div>

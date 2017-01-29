@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN PAGE</title>
+
+<script type="text/javascript" src="angular_file\angular.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="Scripts\controller.js"></script>
+
+</head>
+<style>
+.validation {
+	border-color: red
+}
+</style>
+<body ng-app="myAppInit">
+	Hello
+	<div ng-controller="myAppCtrl">
+		<form ng-submit="onSubmitRegistration()" name="formName">
+
+
+			<div>
+				Enter your Employee Id: <input id="empId" ng-model="empIdReg"
+					ng-class="{'validation':formName.empId.$invalid}" name="empId"
+					maxlength=6 minlength="5"
+					onkeypress="(event.keyCode >= 48 && event.keyCode <= 57)?event.keyCode :event.preventDefault()">
+			</div>
+
+			<div>
+				Enter UserName: <input type="text" id="name" ng-model="userNameReg"
+					name="uname" ng-class="{'validation':formName.uname.$invalid}"
+					onkeypress="(event.keyCode > 64 && event.keyCode < 91) ? event.keyCode :event.preventDefault()"
+					maxlength=20 minlength=8>
+
+			</div>
+
+			<div>
+				Enter Password: <input type="text" id="pass" name="pass"
+					ng-model="passWordReg" maxlength=20 minlength=8
+					ng-class="{'validation':formName.pass.$invalid}">
+			</div>
+
+			<div>
+				Re-type Password: <input type="text" id="repass"
+					ng-model="passWordRetype">
+			</div>
+
+			<div>
+				Enter Email: <input type="email" id="email" name="email"
+					ng-model="emailReg" ng-pattern="/\S+@\S+\.\S+/"
+					ng-class="{'validation':formName.email.$invalid}">
+			</div>
+
+
+
+			<button type="submit">Register</button>
+
+		</form>
+	</div>
+</body>
+</html>
