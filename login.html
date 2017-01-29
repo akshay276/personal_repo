@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN PAGE</title>
+
+<script type="text/javascript" src="angular_file\angular.js"></script>
+
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="Scripts\controller.js"></script>
+</head>
+
+<body ng-app="myAppInit">
+
+
+	<style>
+.linkDisabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	color: grey;
+}
+</style>
+
+	<script type="text/javascript">
+		$scope.disabled = function() {
+			if ($scope.addInviteesDisabled) {
+				return false;
+			}
+		}
+	</script>
+
+	<div ng-controller="myAppCtrl">
+
+		<form ng-submit="onSubmitLogin()" name="loginForm">
+
+			<div>
+				Name: <input type="text" id="name" name="name"
+					ng-model="userNameLogin">
+
+			</div>
+
+			<div>
+				Password: <input type="text" id="pass" name="pass"
+					ng-model="passWordLogin">
+			</div>
+
+
+			<button type="submit">Sign in</button>
+		</form>
+		<button ng-disabled="userNameLogin || passWordLogin" href="#register">
+			<a type="button" href="#register">Sign up</a>
+		</button>
+
+
+	</div>
+
+
+</body>
+</html>

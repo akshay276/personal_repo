@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="Scripts\controller.js"></script>
+
+<style>
+.largefont {
+	color: #332024;
+	font-family: arial;
+	display: inline-block;
+	font-size: 15px;
+	background: #37407a;
+	border: 3px solid red;
+}
+</style>
+<body ng-app="myAppInit" ng-init="myVar = true">
+
+	Hello
+	<div ng-view></div>
+</body>
+</html>
