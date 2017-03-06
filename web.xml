@@ -3,26 +3,37 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
-	<display-name>FileUpload</display-name>
+	<display-name>ReportingTool2</display-name>
 	<welcome-file-list>
-		<welcome-file>submit.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
-	<context-param>
-		<param-name>tempfile.dir</param-name>
-		<param-value>tmpfiles</param-value>
-	</context-param>
+
 
 	<servlet>
-		<servlet-name>/Upload</servlet-name>
-		<servlet-class>com.cts.controller.NgUpload</servlet-class>
+		<servlet-name>NgJsonServlet</servlet-name>
+		<servlet-class>com.cts.controller.NgJsonServlet</servlet-class>
+
 	</servlet>
+
+
 	<servlet-mapping>
-		<servlet-name>/Upload</servlet-name>
-		<url-pattern>/upload</url-pattern>
+
+		<servlet-name>NgJsonServlet</servlet-name>
+		<url-pattern>/NgJsonServlet</url-pattern>
 	</servlet-mapping>
-	
-	<listener>
-		<listener-class>com.cts.controller.FileLocationContextListener</listener-class>
-	</listener>
+
+
+	<servlet>
+		<servlet-name>/NgJSONServlet</servlet-name>
+		<servlet-class>com.cts.controller.NgArrayServlet</servlet-class>
+
+	</servlet>
+
+
+	<servlet-mapping>
+
+		<servlet-name>/NgJSONServlet</servlet-name>
+		<url-pattern>/NgArray</url-pattern>
+	</servlet-mapping>
+
 </web-app>
